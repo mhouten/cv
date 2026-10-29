@@ -168,8 +168,34 @@ p + p { margin-top: 1em; }
 
 .summary {
   font-size: 1.1rem;
-  max-width: 38rem;
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
+}
+
+strong { font-weight: 600; }
+
+/* Four headline numbers under the summary. */
+.stats {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   margin-bottom: 3.5rem;
+  padding-block: 1.25rem;
+  border-block: 1px solid var(--line);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.stats strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 /* Sections ---------------------------------------------------------------- */
@@ -206,6 +232,14 @@ section { margin-bottom: 3.5rem; }
 
 .entry p { margin-top: 0.25rem; }
 
+.entry .tech {
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
 .now {
   display: inline-block;
   margin-left: 0.4rem;
@@ -229,20 +263,13 @@ section { margin-bottom: 3.5rem; }
   gap: 0 3rem;
 }
 
-.tags {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/* Same left column as .entry so everything lines up. */
+.skills {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 0.6rem 1.5rem;
 }
-.tags li {
-  padding: 0.2rem 0.7rem;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: var(--surface);
-  font-size: 0.9rem;
-}
+.skills dt { font-weight: 600; font-size: 0.9rem; padding-top: 0.05rem; }
 
 .pairs {
   display: grid;
@@ -250,6 +277,10 @@ section { margin-bottom: 3.5rem; }
   gap: 0.4rem 1.5rem;
 }
 .pairs dd { color: var(--muted); }
+
+.stack dt { font-weight: 600; }
+.stack dd { color: var(--muted); font-size: 0.9rem; }
+.stack dd + dt { margin-top: 0.6rem; }
 
 /* Blog -------------------------------------------------------------------- */
 
@@ -305,7 +336,10 @@ section { margin-bottom: 3.5rem; }
   .intro { grid-template-columns: 1fr; gap: 1.25rem; }
   .avatar { width: 88px; height: 88px; }
   .entry,
+  .skills,
   .post-list li { grid-template-columns: 1fr; gap: 0.15rem; }
+  .skills dd + dt { margin-top: 0.6rem; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Print: the CV should come out clean on paper / PDF ---------------------- */
@@ -320,11 +354,25 @@ section { margin-bottom: 3.5rem; }
     --accent: #000;
     --accent-soft: #eee;
   }
-  @page { margin: 14mm 16mm; }
-  body { font-size: 10pt; }
-  .site-header, .site-footer, .no-print { display: none; }
+  @page { margin: 12mm 14mm; }
+  /* Everything is sized in rem, so shrinking the root scales the whole page. */
+  html { font-size: 8pt; }
+  body { line-height: 1.45; }
+  h2 { margin-bottom: 0.6rem; }
+  .wrap, .summary { max-width: none; padding: 0; }
+  .entry { grid-template-columns: 9.5rem 1fr; gap: 0 1.25rem; }
+  .entry ul { margin-top: 0.25rem; }
+  .entry li + li { margin-top: 0.1rem; }
+  .entry .tech { margin-top: 0.3rem; }
+  .entry li, .entry h3 { break-inside: avoid; }
+  .entry h3 { break-after: avoid; }
+  .skills { grid-template-columns: 9.5rem 1fr; gap: 0.2rem 1.25rem; }
+  .site-header, .site-footer, .no-print, .avatar { display: none; }
+  .intro { grid-template-columns: 1fr; }
+  .stats { padding-block: 0.6rem; }
+  .stats strong { font-size: 1.25rem; }
   main { padding: 0; }
-  section, .summary, .intro { margin-bottom: 1.5rem; }
-  .entry { break-inside: avoid; padding-block: 0.6rem; }
+  section, .summary, .intro { margin-bottom: 1.25rem; }
+  .entry { padding-block: 0.5rem; }
   a { text-decoration: none; }
 }

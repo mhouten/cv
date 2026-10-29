@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shayan Gholami · Deployment Engineer</title>
-  <meta name="description" content="Shayan Gholami: deployment and DevOps engineer based in Tehran. Java application servers, Linux, automation.">
+  <title>Shayan Gholami · Senior DevOps / SRE Engineer</title>
+  <meta name="description" content="Shayan Gholami: senior DevOps / SRE engineer in Tehran. Kubernetes, CI/CD, observability and production operations for telecom, banking and payment platforms.">
   <meta name="color-scheme" content="light dark">
 
-  <meta property="og:title" content="Shayan Gholami">
-  <meta property="og:description" content="Deployment Engineer · QA Automation · Tehran">
+  <meta property="og:title" content="Shayan Gholami · Senior DevOps / SRE Engineer">
+  <meta property="og:description" content="Kubernetes, CI/CD, observability and production operations for telecom, banking and payment platforms.">
   <meta property="og:type" content="profile">
   <meta property="og:image" content="img/shayan.jpg">
 
@@ -40,128 +40,181 @@
         <img class="avatar" src="img/shayan.jpg" width="434" height="325" alt="Portrait of Shayan Gholami">
         <div>
           <h1>Shayan Gholami</h1>
-          <p class="role">Deployment Engineer · QA Automation</p>
+          <p class="role">Senior DevOps / SRE Engineer</p>
           <ul class="contact">
             <li>Tehran, Iran</li>
             <li><a href="mailto:shgholamigh@gmail.com">shgholamigh@gmail.com</a></li>
-            <!-- <li><a href="tel:+98...">+98 ...</a></li> -->
-            <!-- <li><a href="https://www.linkedin.com/in/...">LinkedIn</a></li> -->
-            <!-- <li><a href="https://github.com/...">GitHub</a></li> -->
+            <li><a href="tel:+989302616150">+98 930 261 6150</a></li>
+            <li><a href="https://www.linkedin.com/in/shayan-gholami-b757b8a7/">LinkedIn</a></li>
           </ul>
         </div>
       </div>
 
-      <p class="summary">
-        I keep Java applications running in production: application servers, Linux
-        hosts, and the scripts that automate the repetitive work around them. Ten years
-        across telecom operations, from network monitoring to DevOps.
-      </p>
+      <div class="summary">
+        <p>
+          I run production platforms for telecom, banking and payments, and I've done it hands-on for
+          <strong>15+ years in IT</strong>, <strong>8+ of them in DevOps</strong>. That means bare-metal
+          Kubernetes, CI/CD, and logging pipelines that take <strong>10&nbsp;TB+ an hour</strong>.
+        </p>
+        <p>
+          When something breaks, I can follow it all the way down: Kubernetes, Linux, Java application
+          servers, Oracle and the network. These days I lead the Mobile Financial Services team at SAEI Group.
+        </p>
+      </div>
+
+      <ul class="stats" aria-label="Highlights">
+        <li><strong>20M+</strong> users on platforms I've run</li>
+        <li><strong>10&nbsp;TB/h</strong> peak log ingestion</li>
+        <li><strong>40%</strong> faster deployments</li>
+        <li><strong>&lt;1 week</strong> to fully remediate Log4Shell</li>
+      </ul>
 
       <section aria-labelledby="experience">
         <h2 id="experience">Experience</h2>
 
         <article class="entry">
-          <span class="when"><time datetime="2019-01">Jan 2019</time> – now</span>
+          <span class="when"><time datetime="2026-06">Jun 2026</time> – now</span>
           <div>
-            <h3>DevOps Engineer <span class="org">· Six DEE Telecom Solutions</span><span class="now">Current</span></h3>
+            <h3>MFS Team Lead <span class="org">· SAEI Group</span><span class="now">Current</span></h3>
             <ul>
-              <li>Administer WildFly, Apache Tomcat and JBoss application servers: standalone instances, clusters, connection pools, plug-ins and JDBC drivers.</li>
-              <li>Configure and maintain servers across multiple environments, including health and performance monitoring, scheduled upgrades and delivery support.</li>
-              <li>Write UNIX shell utilities that automate backups, refreshes and fail-overs.</li>
-              <li>Troubleshoot J2EE / Java issues such as error messages, bugs and availability problems.</li>
-              <li>Roll out patches, updates and fixes through the change management process.</li>
+              <li>Lead day-to-day production support for Mobile Financial Services and payment platforms, covering application, database, infrastructure and integration issues.</li>
+              <li>Coordinate releases and high-risk changes with engineering, database, infrastructure and vendor teams, from pre-checks through execution, validation and follow-up.</li>
+              <li>Own root-cause analysis for critical incidents involving Java applications, Oracle, integrations, networking and dependent services.</li>
+              <li>Stay hands-on with database upgrades, environment migrations, automation, monitoring and platform changes.</li>
             </ul>
+            <p class="tech">Linux · Oracle · Java · Tomcat · WildFly · Kubernetes · GitLab CI/CD · Ansible · Bash · HAProxy · NGINX · Zabbix</p>
           </div>
         </article>
 
         <article class="entry">
-          <span class="when"><time datetime="2017-11">Nov 2017</time> – <time datetime="2018-12">Dec 2018</time></span>
+          <span class="when"><time datetime="2025-06">Jun 2025</time> – <time datetime="2026-06">Jun 2026</time></span>
           <div>
-            <h3>MSO Support Engineer <span class="org">· SAEI Group</span></h3>
+            <h3>DevOps Engineer <span class="org">· AZMA Espadana</span></h3>
             <ul>
-              <li>Configured and maintained the MTNI payment gateway application.</li>
-              <li>Wrote shell scripts to automate backups, refreshes and fail-overs.</li>
+              <li>Built and ran a Kubernetes platform with <strong>5 VM-based control-plane nodes and 20 bare-metal workers</strong>, plus 2 spare servers for capacity and recovery.</li>
+              <li>Set up Ceph with RBD, CephFS and S3, giving stateful workloads block, shared-file and object storage on one platform.</li>
+              <li>Used Kafka as the buffer and replay layer for a logging pipeline peaking at <strong>10&nbsp;TB+ per hour</strong>, absorbing spikes and ending the log loss of the previous setup.</li>
+              <li>Tuned Elasticsearch with hot/cold tiers and ILM, and moved worker capacity from VMware vSphere to bare metal for better performance and stability.</li>
             </ul>
+            <p class="tech">Kubernetes · Cilium · Ceph · Kafka · Elasticsearch · Logstash · Zabbix · MongoDB</p>
           </div>
         </article>
 
         <article class="entry">
-          <span class="when"><time datetime="2016-10">Oct 2016</time> – <time datetime="2017-11">Nov 2017</time></span>
+          <span class="when"><time datetime="2024-01">Jan 2024</time> – <time datetime="2025-08">Aug 2025</time></span>
           <div>
-            <h3>MSO Support Engineer <span class="org">· telc</span></h3>
+            <h3>DevOps Engineer <span class="org">· Asre Danesh</span></h3>
             <ul>
-              <li>Maintained and configured the Huawei PBX application.</li>
+              <li>Migrated production from Docker Swarm to Kubernetes for a mobile banking platform with <strong>10M users</strong>.</li>
+              <li>Operated active/passive DR Kubernetes environments and simplified shared GitLab CI/CD logic, <strong>cutting deployment time by 40%</strong>.</li>
+              <li>Reworked centralized logging with Fluentd DaemonSets and Elasticsearch to handle <strong>1&nbsp;TB+ per day</strong>, with cleaner retention through ILM and index management.</li>
+              <li>Replaced NGINX Ingress with Kong, set up Velero/MinIO backups and namespace migration for DR, and hardened Linux and Kubernetes to pass an internal CIS-aligned audit.</li>
             </ul>
+            <p class="tech">Kubernetes · Docker Swarm · Helm · GitLab CI/CD · SonarQube · Fluentd · Elasticsearch · Kong · HAProxy · Velero · MinIO</p>
           </div>
         </article>
 
         <article class="entry">
-          <span class="when"><time datetime="2015-09">Sep 2015</time> – <time datetime="2016-10">Oct 2016</time></span>
+          <span class="when"><time datetime="2022-08">Aug 2022</time> – <time datetime="2024-01">Jan 2024</time></span>
           <div>
-            <h3>MSO Support Engineer <span class="org">· ZTE-Soft</span></h3>
+            <h3>DevOps Engineer <span class="org">· Irancell Labs (MTN Irancell)</span></h3>
             <ul>
-              <li>Supported the my.rightel.ir customer portal.</li>
+              <li>Ran Kubernetes operations and production delivery for MyIrancell, serving <strong>20M+ users</strong> on a <strong>23-node cluster</strong> (3 control-plane, 20 workers).</li>
+              <li>Built and maintained GitLab CI/CD pipelines, including an air-gapped deployment flow through Nexus Repository for restricted environments.</li>
+              <li>Deployed WSO2 API Manager on Kubernetes with Helm and supported its upgrades, ELK logging, troubleshooting and on-call incidents.</li>
             </ul>
+            <p class="tech">Kubernetes · NGINX Ingress · GitLab CI/CD · Helm · Nexus Repository · WSO2 API Manager · ELK · Python</p>
           </div>
         </article>
 
         <article class="entry">
-          <span class="when"><time datetime="2014-10">Oct 2014</time> – <time datetime="2015-09">Sep 2015</time></span>
+          <span class="when"><time datetime="2019-07">Jul 2019</time> – <time datetime="2022-08">Aug 2022</time></span>
           <div>
-            <h3>MSO Support Engineer <span class="org">· ZTE-Core</span></h3>
+            <h3>DevOps Engineer &amp; Application Support <span class="org">· 6D Technologies</span></h3>
             <ul>
-              <li>Network monitoring agent.</li>
+              <li>During Log4Shell, applied WAF mitigation first, then automated Java and Tomcat upgrades with Ansible; full remediation was done in <strong>under a week</strong>.</li>
+              <li>Automated recurring patch, upgrade and migration work, standardized application-server configuration and applied Tomcat CIS hardening.</li>
+              <li>L3 engineer for payment-gateway production: Tomcat/WildFly administration, deployments, infrastructure troubleshooting, database coordination and incidents.</li>
             </ul>
+            <p class="tech">Linux · Ansible · Java · Tomcat · WildFly · Oracle · WAF</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <span class="when"><time datetime="2018-03">Mar 2018</time> – <time datetime="2019-04">Apr 2019</time></span>
+          <div>
+            <h3>Linux Administrator <span class="org">· SAEI Group (Echarge)</span></h3>
+            <ul>
+              <li>Operated Linux infrastructure for Irancell Mobile Financial Services, the payment gateway and merchant-facing API platforms.</li>
+              <li>Wrote Bash tooling for monitoring, log rotation, alerting and release checks, and handled L2 on-call for Tomcat applications backed by Oracle.</li>
+            </ul>
+            <p class="tech">Linux · Bash · SQL · Tomcat · Zabbix · Oracle</p>
           </div>
         </article>
       </section>
 
-      <section aria-labelledby="education">
-        <h2 id="education">Education &amp; Training</h2>
+      <section aria-labelledby="earlier">
+        <h2 id="earlier">Earlier</h2>
 
         <article class="entry">
-          <span class="when"><time datetime="2015-06">Jun</time> – <time datetime="2015-09">Sep 2015</time></span>
+          <span class="when"><time datetime="2016-10">Oct 2016</time> – <time datetime="2018-02">Feb 2018</time></span>
           <div>
-            <h3>LPI 1 &amp; 2 <span class="org">· Laitech Sharif Institute</span></h3>
+            <h3>Linux Administrator <span class="org">· Telc (VoIP)</span></h3>
+            <p>Ran a 24/7 MCI VoIP platform on fewer than 20 servers under a <strong>98% SLA</strong>; monitored with Zabbix and debugged packet and service issues with tcpdump and Bash.</p>
           </div>
         </article>
 
         <article class="entry">
-          <span class="when"><time datetime="2015-01">Jan</time> – <time datetime="2015-04">Apr 2015</time></span>
+          <span class="when"><time datetime="2016-10">Oct 2016</time> – <time datetime="2018-02">Feb 2018</time></span>
           <div>
-            <h3>Network+, CCNA, CCNP <span class="org">· Kahkeshan Institute</span></h3>
+            <h3>Linux Administrator / L3 Support <span class="org">· ZTE-Soft (RighTel CRM)</span></h3>
+            <p>L3 production support, component updates, Oracle SQL*Plus maintenance, monitoring and incident response.</p>
           </div>
         </article>
 
         <article class="entry">
-          <span class="when"><time datetime="2009">2009</time> – <time datetime="2013-06">Jun 2013</time></span>
+          <span class="when"><time datetime="2014-10">Oct 2014</time> – <time datetime="2016-10">Oct 2016</time></span>
           <div>
-            <h3>B.Sc. Power Electronics <span class="org">· Islamic Azad University, Damavand</span></h3>
+            <h3>NOC Operator <span class="org">· Sahand Parsian Group (for RighTel)</span></h3>
+            <p>Watched telecom network and site alarms in a 24/7 NOC with Zabbix and PRTG; investigated and escalated infrastructure incidents.</p>
           </div>
         </article>
+      </section>
+
+      <section aria-labelledby="expertise">
+        <h2 id="expertise">Expertise</h2>
+        <dl class="skills">
+          <dt>Platform</dt>
+          <dd>Kubernetes, Docker, Docker Swarm, Helm, Cilium, Calico, Ceph, VMware vSphere, Linux</dd>
+          <dt>CI/CD &amp; automation</dt>
+          <dd>GitLab CI/CD, Ansible, Bash, Python, Nexus Repository</dd>
+          <dt>Observability &amp; data</dt>
+          <dd>Elasticsearch, Kafka, Logstash, Fluentd, Zabbix, MongoDB, Oracle</dd>
+          <dt>Networking &amp; APIs</dt>
+          <dd>TCP/IP, DNS, HAProxy, NGINX, Kong, WSO2 API Manager</dd>
+          <dt>Reliability &amp; security</dt>
+          <dd>Disaster recovery, incident response, on-call, Kubernetes RBAC, CIS hardening, performance tuning</dd>
+        </dl>
       </section>
 
       <div class="columns">
-        <section aria-labelledby="skills">
-          <h2 id="skills">Skills</h2>
-          <ul class="tags">
-            <li>Linux</li>
-            <li>Bash</li>
-            <li>SQL</li>
-            <li>WildFly / JBoss</li>
-            <li>Apache Tomcat</li>
-            <li>Java EE</li>
-            <li>Networking</li>
-            <li>LaTeX</li>
-          </ul>
+        <section aria-labelledby="education">
+          <h2 id="education">Education</h2>
+          <dl class="stack">
+            <dt>B.S. Electrical Power Engineering</dt>
+            <dd>Islamic Azad University, Damavand · 2009&#8288;–&#8288;2015</dd>
+            <dt>LPIC-1</dt>
+            <dd>Litec-Sharif · 2014</dd>
+            <dt>Network+, CCNA, CCNP</dt>
+            <dd>Kahkeshan-Noor</dd>
+          </dl>
         </section>
 
         <section aria-labelledby="languages">
           <h2 id="languages">Languages</h2>
           <dl class="pairs">
-            <dt>Persian</dt><dd>Native</dd>
-            <dt>English</dt><dd>Professional working</dd>
-            <dt>Azerbaijani</dt><dd>Elementary</dd>
+            <dt>Farsi</dt><dd>Native</dd>
+            <dt>English</dt><dd>Proficient</dd>
           </dl>
         </section>
       </div>
