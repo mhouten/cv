@@ -94,6 +94,7 @@ a:hover { text-decoration-color: var(--accent); }
 .site-nav a[aria-current="page"] { color: var(--text); }
 
 main { padding-block: 2rem 4rem; }
+.wrap > main:first-child { padding-top: 4rem; } /* pages without a header */
 
 .site-footer {
   border-top: 1px solid var(--line);

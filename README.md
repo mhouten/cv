@@ -11,7 +11,5 @@ blog/               optional blog: index + post template
 
 **Preview locally:** `python3 -m http.server`, then open http://localhost:8000
 
-**PDF:** click "Download PDF" (or Ctrl/Cmd+P). The print styles strip the navigation and footer.
-
 **Starting the blog:** copy `blog/hello-world.html`, edit it, list it in `blog/index.html`,
-then uncomment the "Writing" link in the nav of `index.html`.
+then uncomment the "Writing" link in the footer of `index.html`.
