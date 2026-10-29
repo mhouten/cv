@@ -130,6 +130,9 @@ h3 { font-size: 1.05rem; }
 
 p + p { margin-top: 1em; }
 
+h1, h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
 .muted { color: var(--muted); }
 
 /* Intro ------------------------------------------------------------------- */
@@ -203,15 +206,45 @@ strong { font-weight: 600; }
 
 section { margin-bottom: 3.5rem; }
 
-/* A dated entry: date in the left column, content on the right. */
+/* A dated entry: date in the left column, content on the right.
+   The content column carries a continuous timeline rail with a dot per entry. */
 .entry {
   display: grid;
   grid-template-columns: 9.5rem 1fr;
   gap: 0.25rem 1.5rem;
-  padding-block: 1.1rem;
-  border-top: 1px solid var(--line);
 }
-.entry:last-child { border-bottom: 1px solid var(--line); }
+
+.entry > div {
+  position: relative;
+  padding: 0 0 2rem 1.5rem;
+  border-left: 1px solid var(--line);
+}
+.entry:last-child > div { padding-bottom: 0.5rem; }
+
+.entry > div::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0.45rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--muted);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.entry:first-of-type > div::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.entry h3 { transition: color 0.2s; }
+
+@media (hover: hover) {
+  .entry:hover h3 { color: var(--accent); }
+  .entry:hover > div::before { border-color: var(--accent); }
+}
 
 .entry time,
 .entry .when {
@@ -331,6 +364,39 @@ section { margin-bottom: 3.5rem; }
 }
 .prose pre code { background: none; padding: 0; }
 
+/* Motion: CSS only, skipped for people who ask for less motion ------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+  }
+
+  /* The top of the page settles in once, in sequence. */
+  .intro,
+  .summary,
+  .stats { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .summary { animation-delay: 0.08s; }
+  .stats { animation-delay: 0.16s; }
+
+  /* Further down, entries rise as they scroll into view
+     (browsers without scroll timelines just show them). */
+  @supports (animation-timeline: view()) {
+    .entry,
+    .skills,
+    .columns {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+/* Large screens: scale everything up a touch ------------------------------ */
+
+@media (min-width: 1600px) {
+  html { font-size: 112.5%; }
+}
+
 /* Small screens ----------------------------------------------------------- */
 
 @media (max-width: 600px) {
@@ -341,6 +407,15 @@ section { margin-bottom: 3.5rem; }
   .post-list li { grid-template-columns: 1fr; gap: 0.15rem; }
   .skills dd + dt { margin-top: 0.6rem; }
   .stats { grid-template-columns: repeat(2, 1fr); }
+
+  /* Dates stack above the content, so the rail moves to the whole entry. */
+  .entry {
+    position: relative;
+    padding: 0 0 1.75rem 1.25rem;
+    border-left: 1px solid var(--line);
+  }
+  .entry > div { position: static; padding: 0; border: 0; }
+  .entry:last-child { padding-bottom: 0.5rem; }
 }
 
 /* Print: the CV should come out clean on paper / PDF ---------------------- */
@@ -374,6 +449,7 @@ section { margin-bottom: 3.5rem; }
   .stats strong { font-size: 1.25rem; }
   main { padding: 0; }
   section, .summary, .intro { margin-bottom: 1.25rem; }
-  .entry { padding-block: 0.5rem; }
+  .entry > div { padding-bottom: 0.9rem; }
+  *, *::before { animation: none !important; transition: none !important; }
   a { text-decoration: none; }
 }
