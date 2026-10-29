@@ -1,0 +1,330 @@
+/* ----------------------------------------------------------------------------
+   Shayan Gholami — site styles
+   One stylesheet for every page (cv, blog index, posts). No frameworks.
+---------------------------------------------------------------------------- */
+
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --text: #1d1d1b;
+  --muted: #6b6a65;
+  --line: #e4e2da;
+  --accent: #1f6f5c;
+  --accent-soft: #e3efe9;
+
+  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --measure: 46rem;
+  --gutter: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151614;
+    --surface: #1c1d1b;
+    --text: #e8e6df;
+    --muted: #9a988f;
+    --line: #2d2e2b;
+    --accent: #6cc3a7;
+    --accent-soft: #1f2e29;
+  }
+}
+
+/* Reset ------------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+img { display: block; max-width: 100%; height: auto; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1rem/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 0.15s;
+}
+a:hover { text-decoration-color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection { background: var(--accent-soft); }
+
+/* Layout ------------------------------------------------------------------ */
+
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.site-header .home {
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.site-nav { display: flex; gap: 1.25rem; }
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--text); }
+
+main { padding-block: 2rem 4rem; }
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 1.5rem 3rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Typography -------------------------------------------------------------- */
+
+h1, h2, h3 { line-height: 1.25; font-weight: 600; }
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+h3 { font-size: 1.05rem; }
+
+p + p { margin-top: 1em; }
+
+.muted { color: var(--muted); }
+
+/* Intro ------------------------------------------------------------------- */
+
+.intro {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.75rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  background: var(--line);
+}
+
+.role {
+  margin-top: 0.35rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+}
+
+.summary {
+  font-size: 1.1rem;
+  max-width: 38rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Sections ---------------------------------------------------------------- */
+
+section { margin-bottom: 3.5rem; }
+
+/* A dated entry: date in the left column, content on the right. */
+.entry {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 0.25rem 1.5rem;
+  padding-block: 1.1rem;
+  border-top: 1px solid var(--line);
+}
+.entry:last-child { border-bottom: 1px solid var(--line); }
+
+.entry time,
+.entry .when {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-top: 0.2rem;
+  white-space: nowrap;
+}
+
+.entry .org { color: var(--muted); font-weight: 400; }
+
+.entry ul {
+  margin-top: 0.5rem;
+  padding-left: 1.1rem;
+}
+.entry li + li { margin-top: 0.3rem; }
+.entry li::marker { color: var(--accent); }
+
+.entry p { margin-top: 0.25rem; }
+
+.now {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+
+/* Skills & languages ------------------------------------------------------ */
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0 3rem;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tags li {
+  padding: 0.2rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  font-size: 0.9rem;
+}
+
+.pairs {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1.5rem;
+}
+.pairs dd { color: var(--muted); }
+
+/* Blog -------------------------------------------------------------------- */
+
+.post-list { list-style: none; padding: 0; }
+.post-list li {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1.5rem;
+  padding-block: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+.post-list time { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); padding-top: 0.2rem; }
+
+.post header { margin-bottom: 2.5rem; }
+.post header time { display: block; margin-top: 0.6rem; font-family: var(--mono); font-size: 0.85rem; color: var(--muted); }
+
+.prose { font-size: 1.075rem; line-height: 1.75; }
+.prose > * + * { margin-top: 1.2em; }
+.prose h2 {
+  font-size: 1.35rem;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 2.2em 0 0;
+}
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.prose blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+}
+.prose code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+.prose pre {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.prose pre code { background: none; padding: 0; }
+
+/* Small screens ----------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .intro { grid-template-columns: 1fr; gap: 1.25rem; }
+  .avatar { width: 88px; height: 88px; }
+  .entry,
+  .post-list li { grid-template-columns: 1fr; gap: 0.15rem; }
+}
+
+/* Print: the CV should come out clean on paper / PDF ---------------------- */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --surface: #fff;
+    --text: #000;
+    --muted: #444;
+    --line: #ccc;
+    --accent: #000;
+    --accent-soft: #eee;
+  }
+  @page { margin: 14mm 16mm; }
+  body { font-size: 10pt; }
+  .site-header, .site-footer, .no-print { display: none; }
+  main { padding: 0; }
+  section, .summary, .intro { margin-bottom: 1.5rem; }
+  .entry { break-inside: avoid; padding-block: 0.6rem; }
+  a { text-decoration: none; }
+}
