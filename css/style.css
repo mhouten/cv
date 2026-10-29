@@ -169,6 +169,17 @@ p, li { text-wrap: pretty; }
   margin-top: 0.9rem;
   font-size: 0.9rem;
 }
+.contact li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.contact svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .summary {
   font-size: 1.1rem;
@@ -255,11 +266,13 @@ section { margin-bottom: 3.5rem; }
   white-space: nowrap;
 }
 
-.entry .org { color: var(--muted); font-weight: 400; }
+.entry .org { font-weight: 400; }
 
 .entry ul {
   margin-top: 0.5rem;
   padding-left: 1.1rem;
+  font-size: 0.96rem;
+  line-height: 1.6;
 }
 .entry li + li { margin-top: 0.3rem; }
 .entry li::marker { color: var(--accent); }
@@ -267,9 +280,9 @@ section { margin-bottom: 3.5rem; }
 .entry p { margin-top: 0.25rem; }
 
 .entry .tech {
-  margin-top: 0.6rem;
+  margin-top: 0.7rem;
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -386,7 +399,7 @@ section { margin-bottom: 3.5rem; }
     .columns {
       animation: rise linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 40%;
+      animation-range: entry 0 entry 6rem;
     }
   }
 }
